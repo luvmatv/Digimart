@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papu's Arcade</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b2838; 
+            color: #ffffff;
+            padding-top: 60px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        #carouselExampleIndicators {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #carouselExampleIndicators img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #2c3e50; 
+            border: 1px solid #34495e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+                
+
+        .steam-modal .modal-content {
+            background-color: #171a21;
+            color: #ffffff;
+            border: none;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            cursor: pointer; 
+        }
+
+        .product h4 {
+            font-size: 1.5rem;
+            color: #ffffff; 
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 1.2rem;
+            color: #ecf0f1; 
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e; 
+            color: #ffffff; 
+        }
+
+        #contactFormModal .modal-content {  
+            background-color: #000000;
+        }
+
+        #cartModal .modal-content {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="OIG2.6.png" alt="Logo Papu's Arcade" style="width: 40px; margin-right: 10px;"> 
+                Papu's Arcade
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactFormModal">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems">
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-between">
+                    <h5>Total: $<span id="cartTotal">0.00</span></h5>
+                    <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container mt-5">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="minecraft.html">
+                        <img src="minecraft.webp" class="d-block w-100" alt="Minecraft">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Minecraft</h5>
+                        <p>Juego de construcción y aventuras.</p>
+                        <p>Precio: $25.00 USD</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="bindingofisaac.html">
+                        <img src="tboi.webp" class="d-block w-100" alt="The Binding of Isaac">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>The Binding of Isaac</h5>
+                        <p>Juego de acción y roguelike.</p>
+                        <p>Precio: $20.00 USD</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="slimerancher.html">
+                        <img src="slimerancher.webp" class="d-block w-100" alt="Slime Rancher">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Slime Rancher</h5>
+                        <p>Juego de simulación y aventuras.</p>
+                        <p>Precio: $15.00 USD</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="sekiro.html">
+                        <img src="sekiro.webp" class="d-block w-100" alt="Sekiro">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Sekiro</h5>
+                        <p>Action RPG de ninjas. Precio: $40.00 USD</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="fortnite.html">
+                        <img src="fortnite.jpg" class="d-block w-100" alt="Fortnite">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Fortnite</h5>
+                        <p>Juego de batalla real. Precio: Gratuito</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="stardew.html">
+                        <img src="stardew-valley.png" class="d-block w-100" alt="Stardew Valley">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Stardew Valley</h5>
+                        <p>Simulador de granja. Precio: $15.00 USD</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+        <h2 class="mb-4">Productos Destacados</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="minecraft.html">
+                        <img src="minecraft.webp" alt="Minecraft">
+                    </a>
+                    <h4>Minecraft</h4>
+                    <p>Juego de construcción y aventuras. Precio: $25.00 USD</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="bindingofisaac.html">
+                        <img src="tboi.webp" alt="The Binding of Isaac">
+                    </a>
+                    <h4>The Binding of Isaac</h4>
+                    <p>Juego de acción y roguelike. Precio: $20.00 USD</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="slimerancher.html">
+                        <img src="slimerancher.webp" alt="Slime Rancher">
+                    </a>
+                    <h4>Slime Rancher</h4>
+                    <p>Juego de simulación y aventuras. Precio: $15.00 USD</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="sekiro.html">
+                        <img src="sekiro.webp" alt="Sekiro">
+                    </a>
+                    <h4>Sekiro</h4>
+                    <p>Action RPG de ninjas. Precio: $40.00 USD</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="fortnite.html">
+                        <img src="fortnite.jpg" alt="Fortnite">
+                    </a>
+                    <h4>Fortnite</h4>
+                    <p>Juego de batalla real. Precio: Gratuito</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product">
+                    <a href="stardew.html">
+                        <img src="stardew-valley.png" alt="Stardew Valley">
+                    </a>
+                    <h4>Stardew Valley</h4>
+                    <p>Simulador de granja y vida. Precio: $15.00 USD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer mt-5 py-3 bg-dark">
+        <div class="container">
+            <span class="text-muted">Papu's Arcade :v</span>
+        </div>
+    </footer>
+    
+    <div class="modal fade steam-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Información de Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Correo Electrónico:</strong> contacto@papusarcade.com</p>
+                    <p><strong>Teléfono:</strong> +1234567890</p>
+                    <p><strong>Dirección:</strong> Av. Arcade 123, Ciudad Papu</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactFormModalLabel">Formulario de Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <div class="alert alert-success d-none" role="alert" id="successAlert">
+                            ¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.
+                        </div>
+                        <div class="alert alert-danger d-none" role="alert" id="errorAlert">
+                            Ocurrió un error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.
+                        </div>
+                        <div class="alert alert-success d-none" role="alert" id="successMessage">
+                            ¡Tu mensaje ha sido enviado correctamente!
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="submitContactForm">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let cartItems = [];
+        function addToCart(product, price) {
+            const existingItem = cartItems.find(item => item.product === product);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({ product, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+        
+        function updateCartUI() {
+            const cartItemsElement = $('#cartItems');
+            cartItemsElement.empty();
+        
+            let totalPrice = 0;
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+        
+                const row = `
+                    <tr>
+                        <td>${item.product}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td><input type="number" class="form-control" value="${item.quantity}" min="1" data-product="${item.product}"></td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                        <td><button class="btn btn-danger btn-sm" data-product="${item.product}">Eliminar</button></td>
+                    </tr>
+                `;
+                cartItemsElement.append(row);
+            });
+        
+            $('#cartTotal').text(totalPrice.toFixed(2));
+        }
+        
+        $('.product img').on('click', function() {
+            const product = $(this).closest('.product').find('h4').text();
+            const price = parseFloat($(this).closest('.product').find('p').text().replace(/[^0-9.-]+/g, ""));
+            addToCart(product, price);
+        });
+        
+        $('#cartItems').on('change', 'input[type="number"]', function() {
+            const product = $(this).data('product');
+            const quantity = parseInt($(this).val());
+            const item = cartItems.find(item => item.product === product);
+            item.quantity = quantity;
+            updateCartUI();
+        });
+        
+        $('#cartItems').on('click', '.btn-danger', function() {
+            const product = $(this).data('product');
+            cartItems = cartItems.filter(item => item.product !== product);
+            updateCartUI();
+        });
+        
+        $('[data-bs-target="#cartModal"]').on('click', function() {
+            updateCartUI();
+        });        
+        $(document).ready(function() {
+        function openContactFormModal() {
+            $('#contactFormModal').modal('show');
+        }
+
+        function validateContactForm() {
+            let isValid = true;
+            const nameInput = $('#name');
+            const emailInput = $('#email');
+            const messageInput = $('#message');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const messageRegex = /^[\w\s]+$/;
+
+            if (nameInput.val().trim() === '') {
+                nameInput.addClass('is-invalid');
+                isValid = false;
+            } else {
+                nameInput.removeClass('is-invalid');
+            }
+
+            if (emailInput.val().trim() === '') {
+                emailInput.addClass('is-invalid');
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.val().trim())) {
+                emailInput.addClass('is-invalid');
+                isValid = false;
+            } else {
+                emailInput.removeClass('is-invalid');
+            }
+
+            if (messageInput.val().trim() === '') {
+                messageInput.addClass('is-invalid');
+                isValid = false;
+            } else if (!messageRegex.test(messageInput.val().trim())) {
+                messageInput.addClass('is-invalid');
+                isValid = false;
+            } else {
+                messageInput.removeClass('is-invalid');
+            }
+
+            if (messageInput.val().trim().toLowerCase().includes('grosería')) {
+                messageInput.addClass('is-invalid');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        $('[data-bs-toggle="modal"]').on('click', function() {
+            if ($(this).data('bs-target') === '#contactFormModal') {
+                openContactFormModal();
+            }
+        });
+
+        $('#submitContactForm').on('click', function() {
+            if (validateContactForm()) {
+                $('#successAlert').removeClass('d-none');
+                $('#errorAlert').addClass('d-none');
+                $('#successMessage').removeClass('d-none');
+
+                setTimeout(function() {
+                    $('#contactFormModal').modal('hide');
+                    $('#successAlert').addClass('d-none');
+                    $('#successMessage').addClass('d-none');
+                    $('#contactForm')[0].reset();
+                }, 3000);
+            } else {
+                $('#errorAlert').removeClass('d-none');
+                $('#successAlert').addClass('d-none');
+            }
+        });
+
+        addToCart('Minecraft', 25.00);
+        addToCart('The Binding of Isaac', 20.00);
+        addToCart('Slime Rancher', 15.00);
+        addToCart('Sekiro', 40.00);
+        addToCart('Fortnite', 0.00);
+        addToCart('Stardew Valley', 15.00);
+
+        updateCartUI();
+    });
+</script>
