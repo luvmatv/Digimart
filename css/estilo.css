@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*reinicio css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/*fuente*/
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    background:linear-gradient(to right, #6b008b, #43009b);
+    height: 110vh;
+    padding: 0 20px;
+    display: flex;
+    position: relative;
+}
+
+.menu {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.button-style {
+    background-color: transparent; /* Color de fondo */
+    border: 2px solid white; /* Sin bordes */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin decoración en el texto */
+    display: inline-block;
+    font-size: 16px; /* Tamaño del texto */
+    margin: 4px 2px; /* Margen exterior */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+.button-style:active {
+    transform: scale(0.95); /* Reduce el tamaño del botón al presionarlo */
+}
+
+.button-style a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Sin decoración en el texto del enlace */
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #fff;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #000000;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono{
+    display: none;
+
+}
+
+.menu-label {
+    cursor: pointer;
+    display: none;
+}
+
+.submenu{
+    position: relative;
+
+}
+
+.submenu #carrito {
+    display: none;
+}
+/* CSS */
+.submenu {
+    display: inline-block;
+  }
+  
+  .button-style {
+    vertical-align: middle;
+  }
+  
+  #cart {
+    font-size: 2em; /* Ajusta este valor para cambiar el tamaño del icono del carrito */
+    color: white;
+  }
+.submenu:hover #carrito {
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    min-width: 400px;
+    min-width: 400px;
+}
+
+table{
+    width: 100%;
+}
+
+th {
+    color: #000000;
+}
+
+td {
+    color: #000000;
+}
+
+.borrar {
+    background-color: #303030;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #DFDDE0;
+    font-weight: 800;
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+    margin-top: 300px;
+}
+
+.header-content h1 {
+    font-size: 70px;
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.header-content p {
+    font-size: 18px;
+    padding: 0 200px;
+    color: #DFDDE0;
+    margin-bottom: 80px;
+}
+.botons {
+    display: flex;
+    justify-content: center;
+}
+
+
+.btn-1 {
+    display: inline-block;
+    width: 200px;
+    margin:  20px 10px;
+    padding: 12px 0;
+    border-radius: 25px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #aa00ff;
+}
+
+.btn-1:hover {
+    background-color: #61047e;
+}
+
+.Socials-1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+}
+
+
+.Socials-1 img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+/*RECETAS*/
+.recetas {
+    display: flex;
+    padding: 120px 0;
+}
+
+.recetas-1 {
+    width: 50%;
+}
+.recetas-1 h3 {
+    font-size: 18px;
+    color: #aa00ff;
+}
+
+.recetas-1 p {
+    color: #aa00ff;
+}
+
+.recetas-1 hr {
+    margin: 10px 0;
+    border: 1px solid #312F32;
+}
+
+.recetas-2 {
+    width: 50%;
+    text-align: center;
+}
+
+.recetas-2 h2 {
+    font-size: 50px;
+    line-height: 55px;
+    color: #aa00ff;
+}
+
+/*PLATILLOS*/
+
+.platillos {
+    padding: 50px 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.swiper-button-prev::after {
+    font-size: 25px;
+}
+.swiper-button-next::after {
+    font-size: 25px;
+}
+
+.swiper-button-prev{
+    color: #aa00ff;
+}
+.swiper-button-next {
+    color: #aa00ff;
+}
+
+
+.swiper-pagination-bullet{
+    background-color:#DFDDE0;
+    opacity: 3;
+    top: 50px;
+}
+.swiper-pagination-bullet-active {
+    background-color: #000000;
+}
+
+.platillo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+}
+.platillo h3 {
+    font-size: 16px;
+    color: #aa00ff;
+    margin-bottom: 10px;
+}
+.precio {
+    font-size: 18px;
+    color: #000000 !important;
+}
+
+.platillo img {
+    width: 250px;
+}
+.platillo p {
+    font-size: 16px;
+    color: #303030;
+    margin-top: 15px;
+}
+
+
+.btn-2 {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #aa00ff;
+    color: #DFDDE0;
+    font-size: 14px;
+    margin-top: 25px;
+    border-radius: 25px;
+}
+
+.btn-2:hover  {
+    background-color: #d277ff;
+}
+
+.c1 {
+    color: #aa00ff !important;
+}
+
+.btn-3 {
+    display: inline-block;
+    color: #DFDDE0;
+    padding: 8px 15px;
+    background-color: #aa00ff;
+    border-radius: 25px;
+    margin-top: 25px;
+    border: 1px solid #aa00ff;
+}
+
+.btn-3:hover {
+    background-color: #d277ff;
+    border: 1px solid #d277ff;
+}
+
+.footer {
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    width: 25%;
+}
+
+.link h3 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.link p {
+    color: #000000;
+    font-size: 14px;
+    margin: 0 50px 15px 0px;
+}
+.link ul li a {
+    display: inline-block;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.Socials-2 {
+    width: 20px;
+    height: 20px;
+}
+
+.link form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inp {
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.btn-4 {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: #aa00ff;
+    border: 0;
+    color: #DFDDE0;
+}
+.contacto{
+    background:
+        linear-gradient(rgb(57, 0, 103), rgba(0,12,103,.8)),
+        url(img/foto-contacto.png);
+        background-size: cover;
+        color: #fff;
+        margin-top: 100px;
+        padding: 80px 20px;
+}
+.contacto .contenedor-contacto{
+    max-width: 1100px;
+    margin: auto;
+}
+.contacto h2{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.contacto .contenedor-contacto .fila{
+    display: flex;
+}
+.contacto .contenedor-contacto .fila .col{
+    width: 50%;
+}
+.contacto .contenedor-contacto .info{
+    margin-bottom: 30px;
+    border-left: 3px solid #8d8d8d;
+    padding-left: 8px;
+}
+.contacto .contenedor-contacto .info p{
+    color: #8d8d8d;
+}
+.contacto input, .contacto textarea{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid #ffffff ;
+    margin-bottom: 20px;
+    outline: none;
+    color: #ffffff;
+}
+.contacto .btn{
+    background-color: none;
+    padding: 5px 40px;
+    border: 2px solid;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(to right, #8400ff, #b700ff);
+}
+
+footer{
+    background-color: #312F32;
+    color: #fff;
+    padding: 7px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 991px) {
+
+    .menu{
+        padding: 30px;
+    }
+    .menu-label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #DFDDE0;
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+    
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 30px;
+        margin-top: 130px;      
+    }
+    .header-content h1 {
+        font-size: 40px;
+    }
+    .header-content p {
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    .botons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-1 {
+        margin: 0 0 20px 0;
+    }
+    .Socials-1 {
+        display: none;
+    }
+    .recetas {
+        flex-direction: column;
+        padding: 0px 30px;
+        text-align: center;
+    }
+    .recetas-1 {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .recetas-2 {
+        width: 100%;
+    }
+    .footer {
+        padding: 30px;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .link{
+        width: 70%;
+    }
+
+    .link {
+        margin:  0 0 25px 0;
+    }
+    .Socials-2 {
+        margin-bottom: 15px;
+    }
+    
+    .button-style {
+        font-size: 12px;
+    }
+    .menu-icono {
+        display: initial;
+        width: 25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
